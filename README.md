@@ -24,5 +24,4 @@ Para mais informações sobre o formato dos arquivos e o conjunto de dados, cons
 - **src/**: Contém o código-fonte do Algoritmo Genético para resolver o TSP.
 - **data/**: Diretório para armazenar o arquivo "brazil58.tsp".
 - **results/**: Armazena os resultados das execuções, incluindo as melhores rotas encontradas.
-- **README.md**: Este arquivo, fornecendo uma visão geral do projeto.
 
