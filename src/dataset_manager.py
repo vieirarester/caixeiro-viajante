@@ -6,15 +6,15 @@ dataset_xml = os.path.join('data', 'brazil58.xml')
 
 def load_data(dataset_xml):
 
+    # carregar informações das cidades num dicionário
+    cities = {}
+
     try:
         # carregar o arquivo XML
         tree = ET.parse(dataset_xml)
         root = tree.getroot()
 
         print(root.tag)
-
-        # carregar informações das cidades num dicionário
-        cities = {}
 
         # encontrar todos os elementos que correspondem a expressão XPath
         for origin, city in enumerate(root.findall('.//graph/vertex')):
@@ -34,5 +34,7 @@ def load_data(dataset_xml):
 
     except (FileNotFoundError, ET.ParseError) as e:
         print(f'Erro na leitura da base dados: Caminho = {dataset_xml} | Erro: {e}')
+    
+    return cities
 
 load_data(dataset_xml)
