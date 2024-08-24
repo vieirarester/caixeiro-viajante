@@ -1,4 +1,5 @@
 import os
+import random
 from individual import Individual
 from dataset_manager import load_data
 
@@ -16,6 +17,22 @@ class Population:
         for individual in self.individuals:
             print(individual)
 
+    def roulette_wheel_selection(self):
+        # calcula o somatório dos fitness de todos os indivíduos
+        total_fitness = sum(individual.fitness for individual in self.individuals)
+        
+        # escolhe um ponto na roleta
+        pick = random.uniform(0, total_fitness)
+        print(f"O ponto da roleta foi: {pick}\n")
+        current = 0
+        
+        # encontra o indivíduo selecionado
+        for individual in self.individuals:
+            current += individual.fitness
+            if current > pick:
+                return individual
+
 cities = load_data(os.path.join('data', 'brazil58.xml'))
-population = Population(15, cities)
+population = Population(10, cities)
 population.print_population()
+print(population.roulette_wheel_selection())
