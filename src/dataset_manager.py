@@ -14,8 +14,6 @@ def load_data(dataset_xml):
         tree = ET.parse(dataset_xml)
         root = tree.getroot()
 
-        print(root.tag)
-
         # encontrar todos os elementos que correspondem a expressão XPath
         for origin, city in enumerate(root.findall('.//graph/vertex')):
             for d in city.findall('edge'):
@@ -26,11 +24,6 @@ def load_data(dataset_xml):
                     if origin not in cities:
                         cities[origin] = {}
                     cities[origin][id_city] = distance
-        
-        print("Cidades e distâncias carregadas: ")
-        for origin, d in cities.items():
-            for destination, distance in d.items():
-                print(f"Cidade {origin} -> Cidade {destination} => {distance}")
 
     except (FileNotFoundError, ET.ParseError) as e:
         print(f'Erro na leitura da base dados: Caminho = {dataset_xml} | Erro: {e}')
