@@ -1,8 +1,7 @@
 import random
-import os
 from dataset_manager import load_data
 
-class Individuo:
+class Individual:
     
     def __init__(self, genes=None):
         # Se os genes não forem fornecidos, inicialize aleatoriamente
@@ -39,8 +38,8 @@ class Individuo:
             except KeyError:
                 raise KeyError(f"Distância entre {self.genes[-1]} e {self.genes[0]} não encontrada.")
 
-        print(f"Distância total: {total_distance}")
         self.fitness = total_distance
+        return self.fitness
 
     def __str__(self):
         return f'Individuo(genes = {self.genes}, fitness = {self.fitness:.2f})'
