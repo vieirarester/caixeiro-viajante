@@ -39,14 +39,9 @@ class Individuo:
             except KeyError:
                 raise KeyError(f"Distância entre {self.genes[-1]} e {self.genes[0]} não encontrada.")
 
-        print(f"Total Distance: {total_distance}")
+        print(f"Distância total: {total_distance}")
         self.fitness = total_distance
 
     def __str__(self):
         return f'Individuo(genes = {self.genes}, fitness = {self.fitness:.2f})'
 
-# Carregar os dados e criar um indivíduo
-cities = load_data(os.path.join('data', 'brazil58.xml'))
-individuo = Individuo()
-individuo.calculate_fitness(cities)
-print(individuo)
