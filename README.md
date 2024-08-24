@@ -15,13 +15,13 @@ O conjunto de dados "brazil58" está disponível na biblioteca TSPLIB e pode ser
 - Formato `.tsp`: [brazil58.tsp](http://elib.zib.de/pub/mp-testdata/tsp/tsplib/tsp/brazil58.tsp)
 - Formato `.xml`: [XML-TSPLIB Instances](http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/XML-TSPLIB/instances/)
 
-O formato `.tsp` apresenta os custos das distâncias entre as cidades no formato de uma matriz de incidência superior (sem as diagonais) de um grafo simétrico.
+O formato `.tsp` apresenta os custos das distâncias entre as cidades no formato de uma matriz de incidência superior (sem as diagonais) de um grafo simétrico. Já o xml apresenta todas a distâncias, inclusive as simétricas `[distancia(a,b) = distancia(b,a)]`.
 
 Para mais informações sobre o formato dos arquivos e o conjunto de dados, consulte o documento oficial da TSPLIB: [TSPLIB95 Documentation](http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/tsp95.pdf).
 
 ## Estrutura do Projeto
 
 - **src/**: Contém o código-fonte do Algoritmo Genético para resolver o TSP.
-- **data/**: Diretório para armazenar o arquivo "brazil58.tsp".
+- **data/**: Diretório para armazenar o arquivo "brazil58.xml".
 - **results/**: Armazena os resultados das execuções, incluindo as melhores rotas encontradas.
 
