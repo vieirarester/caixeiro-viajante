@@ -88,8 +88,3 @@ class Individual:
 
     def __str__(self):
         return f'Individuo(genes = {self.genes}, fitness = {self.fitness:.2f})'
-    
-individual = Individual()
-print(f"Indivíduo original = {individual}")
-
-print(f"Indivíduo mutado = {individual.mutate()}")
