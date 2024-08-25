@@ -52,9 +52,4 @@ class GeneticAlgorithm:
 
             print(f'[Geração {generation_counter}]: O melhor = {best_current_generation.fitness} | Melhor de Todos = {self.best_all_generations.fitness}')
 
-            return self.best_all_generations, self.all_fitness
-
-
-cities = load_data(os.path.join('data', 'brazil58.xml'))
-genetic_algorithm = GeneticAlgorithm(cities, number_generations=100, size_population=50)
-genetic_algorithm.run()
+        return self.all_fitness
