@@ -76,13 +76,14 @@ class Individual:
         
         return Individual(child1), Individual(child2)
     
-    def mutate(self):
-        # sorteia indíces para trocar
-        index1, index2 = random.sample(range(len(self.genes)), 2)
-        print(f"Os índices sorteados foram = {index1} e {index2}")
+    def mutate(self, mutation_rate):
+        if random.random() < mutation_rate:
+            # sorteia indíces para trocar
+            index1, index2 = random.sample(range(len(self.genes)), 2)
+            print(f"[SOFREU MUTAÇÃO] Os índices sorteados foram = {index1} e {index2}")
 
-        # troca os genes com índices sorteados
-        self.genes[index1], self.genes[index2] = self.genes[index2], self.genes[index1]
+            # troca os genes com índices sorteados
+            self.genes[index1], self.genes[index2] = self.genes[index2], self.genes[index1]
 
         return self
 
