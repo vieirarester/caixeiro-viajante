@@ -23,7 +23,6 @@ class Population:
         
         # escolhe um ponto na roleta
         pick = random.uniform(0, total_fitness)
-        print(f"O ponto da roleta foi: {pick}\n")
         current = 0
         
         # encontra o indivíduo selecionado
@@ -32,7 +31,3 @@ class Population:
             if current > pick:
                 return individual
 
-cities = load_data(os.path.join('data', 'brazil58.xml'))
-population = Population(10, cities)
-population.print_population()
-print(population.roulette_wheel_selection())
