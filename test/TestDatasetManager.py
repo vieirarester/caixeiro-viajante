@@ -4,7 +4,7 @@ import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-from dataset_manager import load_data
+from DatasetManager import load_data
 
 class TestDatasetManager(unittest.TestCase):
 

@@ -1,7 +1,10 @@
+import sys
 import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+
 import random
-from individual import Individual
-from dataset_manager import load_data
+from Individual import Individual
+from DatasetManager import load_data
 
 class Population:
     def __init__ (self, population_size, cities):
@@ -30,4 +33,12 @@ class Population:
             current += individual.fitness
             if current > pick:
                 return individual
+            
+    def elitism_selection(self, individuals_selected):
+
+        # ordena a população em ordem crescente de fitness
+        sorted_individuals = sorted(self.individuals, key=lambda indiv: indiv.fitness)
+        best_individuals = sorted_individuals[:individuals_selected]
+
+        return best_individuals
 
