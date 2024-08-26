@@ -21,7 +21,10 @@ Para mais informações sobre o formato dos arquivos e o conjunto de dados, cons
 
 ## Estrutura do Projeto
 
-- **src/**: Contém o código-fonte do Algoritmo Genético para resolver o TSP.
+
 - **data/**: Diretório para armazenar o arquivo "brazil58.xml".
-- **results/**: Armazena os resultados das execuções, incluindo as melhores rotas encontradas.
+- **gui/**: Interface para obter as informações do usuário.
+- **src/**: Contém o código-fonte do Algoritmo Genético para resolver o TSP.
+- **test/**: Teste da classe que gerencia a base de dados (arquivo brasil58.xml).
+- **Main.py**: Arquivo que executa o programa.
 
